@@ -1,0 +1,207 @@
+/* Global */
+
+$color-one: #1abc9c;
+$color-two: #16a085;
+$color-three: #2ecc71;
+$color-four: #27ae60;
+$color-five: #3498db;
+$color-six: #2980b9;
+$color-seven: #f1c40f;
+$color-eight: #f39c12;
+$color-nine: #e67e22;
+$color-ten: #d35400;
+$color-eleven: #e74c3c;
+$color-twelve: #c0392b;
+$color-white: #fff;
+$color-black: #000;
+
+$font-main: 'Josefin Sans', sans-serif;
+
+*, *::before, *::after {
+	box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: $font-main;
+}
+
+h1 {
+  font-size: 40px;
+  margin: 0;
+}
+
+.container { 
+    position:fixed;
+    height: calc(100% - 80px);
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+/*Header*/
+
+.header {
+  height: 80px;
+  background: $color-black;
+  &-wrapper {
+    color: $color-white;
+    display: flex;
+    align-items: center;
+    height: 100%;
+    justify-content: center;
+  }
+} 
+
+/*Squares*/
+
+.squares-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    background-color: yellow;
+    height: 100%;
+}
+
+.square-pair {
+    flex: 0 0 33.3333%;
+}
+
+.square {
+  height: 50%;
+  position: relative;
+
+      &-overlay {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        background-image: linear-gradient(90deg, $color-white 50%, transparent 50%);
+        background-position:100% 0;
+        background-size: 300%;
+        transition: all 1s;
+      }
+  
+      &-name {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+        display: none;
+      }
+
+      &:hover {
+          .square-overlay {
+              background-position: 0 100%;
+          }
+
+          .square-name {
+              display: block;
+          }
+     }
+}
+
+.background {
+
+    &-one {
+      background: $color-one;
+    }
+    &-two {
+      background: $color-two;
+    }
+    &-three {
+      background: $color-three;
+    }
+    &-four {
+      background: $color-four;
+    }
+    &-five {
+      background: $color-five;
+    }
+    &-six {
+      background: $color-six;
+    }
+    &-seven {
+      background: $color-seven;
+    }
+    &-eight{
+      background: $color-eight;
+    }
+    &-nine {
+      background: $color-nine;
+    }
+    &-ten {
+      background: $color-ten;
+    }
+    &-eleven {
+      background: $color-eleven;
+    }
+    &-twelve {
+      background: $color-twelve;
+    }
+}
+
+.description  {
+
+    &-one {
+      color: $color-one;
+    }
+    &-two {
+      color: $color-two;
+    }
+    &-three {
+      color: $color-three;
+    }
+    &-four {
+      color: $color-four;
+    }
+    &-five {
+      color: $color-five;
+    }
+    &-six {
+      color: $color-six;
+    }
+    &-seven {
+      color: $color-seven;
+    }
+    &-eight {
+      color: $color-eight;
+    }
+    &-nine {
+      color: $color-nine;
+    }
+    &-ten {
+      color: $color-ten;
+    }
+    &-eleven {
+      color: $color-eleven;
+    }
+    &-twelve {
+      color: $color-twelve;
+    }
+}
+
+/*Media*/
+
+@media (max-width: 992px) {
+
+  .square-pair {
+    flex: 0 0 50%;
+  }
+}
+
+@media (max-width: 767px) {
+
+  .container {
+    position: static;
+  }
+  
+  .squares-wrapper {
+    flex-direction: column;
+    }
+  
+  .square {
+    min-height: 120px;
+  }
+}
+
